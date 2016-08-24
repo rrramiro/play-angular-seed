@@ -16,8 +16,18 @@ libraryDependencies ++= Seq(
   jdbc,
   cache,
   ws,
-  "org.scalatestplus.play" %% "scalatestplus-play" % "1.5.1" % Test
+  "org.scalatestplus.play" %% "scalatestplus-play" % "1.5.1" % Test,
+  "org.webjars" % "squirejs" % "0.1.0" % "test"
 )
+
+
+pipelineStages := Seq(uglify)
+
+UglifyKeys.uglifyOps := { js =>
+  Seq((js.sortBy(_._2), "concat.min.js"))
+}
+
+MochaKeys.requires += "Setup"
 
 coverageExcludedPackages := "<empty>;controllers.*javascript;.*ReverseApplication.*;.*Routes.*"
 

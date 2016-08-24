@@ -6,15 +6,11 @@ resolvers ++= Seq(
   "sonatype-releases" at "https://oss.sonatype.org/content/repositories/releases/"
 )
 
-libraryDependencies += "org.webjars.bower" % "jasmine" % "2.4.1" % "runtime"
-
 addSbtPlugin("org.scoverage" % "sbt-scoverage" % "1.3.5")
 
 addSbtPlugin("org.scalastyle" % "scalastyle-sbt-plugin" % "0.8.0")
 
 addSbtPlugin("org.scalariform" % "sbt-scalariform" % "1.6.0")
-
-addSbtPlugin("com.joescii" % "sbt-js-test" % "0.2.0")
 
 // The Play plugin
 addSbtPlugin("com.typesafe.play" % "sbt-plugin" % "2.5.6")
@@ -26,6 +22,8 @@ addSbtPlugin("com.typesafe.sbt" % "sbt-coffeescript" % "1.0.0")
 addSbtPlugin("com.typesafe.sbt" % "sbt-less" % "1.1.0")
 
 addSbtPlugin("com.typesafe.sbt" % "sbt-jshint" % "1.0.3")
+
+addSbtPlugin("com.typesafe.sbt" % "sbt-uglify" % "1.0.3")
 
 addSbtPlugin("com.typesafe.sbt" % "sbt-rjs" % "1.0.7")
 
