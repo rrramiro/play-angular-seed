@@ -1,5 +1,7 @@
 package controllers
 
+import javax.inject.Inject
+
 import models.User
 import play.api.Logger
 import play.api.cache._
@@ -11,7 +13,7 @@ import play.api.mvc._
 import scala.concurrent.duration._
 
 /** Application controller, handles authentication */
-class Application(val cache: CacheApi) extends Controller with Security {
+class Application @Inject() (val cache: CacheApi) extends Controller with Security {
 
   val cacheDuration = 1.day
 
@@ -64,8 +66,8 @@ class Application(val cache: CacheApi) extends Controller with Security {
   /** JSON reader for [[LoginCredentials]]. */
   implicit val LoginCredentialsFromJson = (
     (__ \ "email").read[String](minLength[String](5)) ~
-      (__ \ "password").read[String](minLength[String](8))
-    )((email, password) => LoginCredentials(email, password))
+    (__ \ "password").read[String](minLength[String](8))
+  )((email, password) => LoginCredentials(email, password))
 
   /**
    * Log-in a user. Expects the credentials in the body in JSON format.

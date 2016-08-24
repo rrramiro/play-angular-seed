@@ -17,6 +17,9 @@ libraryDependencies ++= Seq(
   cache,
   ws,
   "org.webjars" % "angularjs" % "1.5.7",
+  "org.webjars" % "bootstrap" % "3.3.6",
+  "org.webjars" % "requirejs" % "2.1.19",
+  "org.webjars" % "bootstrap-glyphicons" % "bdd2cbfba0",
   "org.scalatestplus.play" %% "scalatestplus-play" % "1.5.1" % Test,
   "org.webjars" % "squirejs" % "0.1.0" % "test"
 )
@@ -71,5 +74,6 @@ scalacOptions ++= Seq("-feature", "-language:postfixOps")
 // JavaScript linting with sbt-jshint (https://github.com/sbt/sbt-jshint)
 // ~~~
 // JshintKeys.config := ".jshintrc"
-//emojiLogs
+emojiLogs
 
+excludeFilter in scalariformFormat := (excludeFilter in scalariformFormat).value ||  "Routes.scala" || "ReverseRoutes.scala" || "JavaScriptReverseRoutes.scala" || "RoutesPrefix.scala"

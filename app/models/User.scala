@@ -33,14 +33,13 @@ object User {
     (__ \ "dateOfBirth").writeNullable[DateTime] ~
     (__ \ "createdAt").write[DateTime]
   )((user: User) => (
-    user.id,
-    user.email,
-    None, // here we skip the password
-    user.name,
-    user.dateOfBirth,
-    user.createdAt
-  ))
-
+      user.id,
+      user.email,
+      None, // here we skip the password
+      user.name,
+      user.dateOfBirth,
+      user.createdAt
+    ))
 
   def findOneById(id: Long): Option[User] = {
     // TODO: find the corresponding user

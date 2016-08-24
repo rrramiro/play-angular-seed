@@ -17,13 +17,14 @@ trait Security { self: Controller =>
   val AuthTokenUrlKey = "auth"
 
   /**
-    * Checks that the token is:
-    * - present in the cookie header of the request,
-    * - either in the header or in the query string,
-    * - matches a token already stored in the play cache
-    */
+   * Checks that the token is:
+   * - present in the cookie header of the request,
+   * - either in the header or in the query string,
+   * - matches a token already stored in the play cache
+   */
   def HasToken[A](p: BodyParser[A] = parse.anyContent)(
-    f: String => Long => Request[A] => Result): Action[A] =
+    f: String => Long => Request[A] => Result
+  ): Action[A] =
     Action(p) { implicit request =>
       request.cookies.get(AuthTokenCookieKey).fold {
         Unauthorized(Json.obj("message" -> "Invalid XSRF Token cookie"))

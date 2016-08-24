@@ -1,18 +1,22 @@
 package controllers
 
+import javax.inject.Inject
+
+import models.User
 import play.api.cache.CacheApi
 import play.api.libs.json._
 import play.api.mvc._
 
 /** Example controller; see conf/routes for the the mapping to routes */
-class Users(val cache: CacheApi) extends Controller with Security {
+class Users @Inject() (val cache: CacheApi) extends Controller with Security {
 
-  /** Retrieves a logged in user if the authentication token is valid.
-    *
-    * If the token is invalid, [[HasToken]] does not invoke this function.
-    *
-    * @return The user in JSON format.
-    */
+  /**
+   * Retrieves a logged in user if the authentication token is valid.
+   *
+   * If the token is invalid, [[HasToken]] does not invoke this function.
+   *
+   * @return The user in JSON format.
+   */
   def authUser() = HasToken(parse.empty) { token => userId => implicit request =>
     Ok(Json.toJson(User.findOneById(userId)))
   }
