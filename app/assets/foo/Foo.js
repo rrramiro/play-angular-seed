@@ -1,8 +1,3 @@
-(function () {
-
-
-"use strict";
-
 define(["bar"], function(bar) {
     return {
         callBar: function() {
@@ -10,5 +5,3 @@ define(["bar"], function(bar) {
         }
     };
 });
-
-}());

@@ -2,8 +2,8 @@
   "curly": true,
   "devel": true,
   "eqeqeq": true,
-  "strict": true,
-  "undef": true,
+  "strict": false,
+  "undef": false,
   "unused": true,
   "browser": true,
   "predef": {
