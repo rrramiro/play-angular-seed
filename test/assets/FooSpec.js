@@ -1,3 +1,5 @@
+var Squire = requirejs("lib/squirejs/Squire");
+
 describe("Foo", function() {
     it("should call bar", function(done) {
         new Squire().mock("bar", {

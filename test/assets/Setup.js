@@ -35,11 +35,10 @@ requirejs.config({
 
 // A few modules that all tests will use
 
-
-var jsdom = require('jsdom').jsdom;
-
-global.document = jsdom('<html><head><script></script></head><body></body></html>');
-global.window = global.document.parentWindow;
-global.navigator = window.navigator = {};
-global.Squire = requirejs("lib/squirejs/Squire");
+// var jsdom = require('jsdom').jsdom;
+//
+// global.document = jsdom('<html><head><script></script></head><body></body></html>');
+// global.window = global.document.parentWindow;
+// global.navigator = window.navigator = {};
+//global.Squire = requirejs("lib/squirejs/Squire");
 global.assert = require("assert");

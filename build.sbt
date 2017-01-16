@@ -21,9 +21,9 @@ libraryDependencies ++= Seq(
   "org.webjars" % "requirejs" % "2.1.19",
   "org.webjars" % "es5-shim" % "4.5.9",
   "org.webjars" % "angular-ui-router" % "0.2.18",
-  "org.webjars.npm" % "jsdom" % "9.4.1" % Test,
+  //"org.webjars.npm" % "jsdom" % "9.4.1" % Test,
   //"org.webjars.npm" % "mocha-jsdom" % "1.1.0" % Test,
-  "org.webjars.npm" % "tough-cookie" % "2.2.1" % Test,
+  //"org.webjars.npm" % "tough-cookie" % "2.2.1" % Test,
   "org.webjars.npm" % "angular-mocks" % "1.5.8" % Test,
   "org.webjars" % "squirejs" % "0.1.0" % Test,
   "org.scalatestplus.play" %% "scalatestplus-play" % "1.5.1" % Test
